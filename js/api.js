@@ -148,18 +148,10 @@ async function getTeam() {
                                         <div class="team-img">
                                             <img src="data:image/png;base64,${team[i].image}" class="img-fluid rounded-top w-100" alt="">
                                             <div class="team-icon">
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="${team[i].facebook || "#"}" target="_blank" rel="noopener noreferrer">
-                                                        <i class="fab fa-facebook-f"></i>
-                                                    </a>
-                                                    <a class="btn btn-primary btn-sm-square text-center rounded-pill mb-2" href="${team[i].twitter || "#"}" target="_blank" rel="noopener noreferrer">
-                                                        <i class="fab fa-twitter"></i>
-                                                    </a>
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="${team[i].linkedin || "#"}" target="_blank" rel="noopener noreferrer">
-                                                        <i class="fab fa-linkedin-in"></i>
-                                                    </a>
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="${team[i].instagram || "#"}" target="_blank" rel="noopener noreferrer">
-                                                        <i class="fab fa-instagram"></i>
-                                                    </a>
+                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://www.facebook.com/share/MtH2uE8LvsKK845h/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://wa.me/60136969570" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="https://www.instagram.com/tasheer_edu?igsh=MWVmMzUwNHh6eml6aA=="target="_blank"><i class="fab fa-instagram"></i></a>
                                                 </div>
                                         </div>
                                         <div dir="rtl" class="team-title p-4">
