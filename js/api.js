@@ -123,17 +123,17 @@ async function getTeam() {
                 let role = team[i].role;
 
                 switch (role) {
-                    case 'Financial':
-                        typeService = 'الشؤون المالية';
+                    case 'Executive':
+                        typeService = 'المدير التنفيذي';
                         break;
-                    case 'Education':
-                        typeService = 'خدمات التعليم';
+                    case 'Relations':
+                        typeService = 'العلاقات العامة';
                         break;
-                    case 'Travel':
-                        typeService = 'خدمات السفر والسياحة';
+                    case 'Consultant':
+                        typeService = 'المستشار التعليمي';
                         break;
-                    case 'Hajj':
-                        typeService = 'خدمات الحج والعمرة';
+                    case 'Customer':
+                        typeService = 'خدمة العملاء';
                         break;
                     default:
                         typeService = role;
@@ -156,7 +156,7 @@ async function getTeam() {
                                         </div>
                                         <div dir="rtl" class="team-title p-4">
                                             <h4 class="mb-0">${team[i].username}</h4>
-                                            <p class="mb-0">مسؤول ${typeService}</p>
+                                            <p class="mb-0">${typeService}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -214,12 +214,14 @@ async function getNews() {
         if (news.length > 0) {
             for (let i = 0; i < news.length; i++) {
                 html += `
-                    <div class="card-news">
+                    <div class="card-news m-4">
+                        
                         <div dir="rtl" class="news-content p-4">
                             <h4 class="news-title">${news[i].title}</h4>
                             <p class="news-date">التاريخ : ${new Date(news[i].createdAt).toLocaleDateString('ar-EG')}</p>
                             <p class="news-description short-description">${news[i].content}</p>
                         </div>
+                        <hr>
                     </div>
                 `;
             }
