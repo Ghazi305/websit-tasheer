@@ -148,7 +148,7 @@ async function getTeam() {
                                         <div class="team-img">
                                             <img src="data:image/png;base64,${team[i].image}" class="img-fluid rounded-top w-100" alt="">
                                             <div class="team-icon">
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://www.facebook.com/share/MtH2uE8LvsKK845h/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://www.facebook.com/share/1MVSbtFPtx/?mibextid=wwXlfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                                     <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://wa.me/60136969570" target="_blank"><i class="fab fa-whatsapp"></i></a>
                                                     <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
                                                     <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="https://www.instagram.com/tasheer_edu?igsh=MWVmMzUwNHh6eml6aA=="target="_blank"><i class="fab fa-instagram"></i></a>
