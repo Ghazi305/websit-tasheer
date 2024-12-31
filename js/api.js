@@ -140,30 +140,24 @@ async function getTeam() {
                 }
           
                 html += `
-                    <div dir="rtl" class="container-fluid team pb-5">
-                        <div class="container pb-5">
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="team-item">
-                                        <div class="team-img">
-                                            <img src="data:image/png;base64,${team[i].image}" class="img-fluid rounded-top w-100" alt="">
-                                            <div class="team-icon">
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://www.facebook.com/share/1MVSbtFPtx/?mibextid=wwXlfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://wa.me/60136969570" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="https://www.instagram.com/tasheer_edu?igsh=MWVmMzUwNHh6eml6aA=="target="_blank"><i class="fab fa-instagram"></i></a>
-                                                </div>
-                                        </div>
-                                        <div dir="rtl" class="team-title p-4">
-                                            <h4 class="mb-0">${team[i].username}</h4>
-                                            <p class="mb-0">${typeService}</p>
-                                        </div>
-                                    </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                             <img src="data:image/png;base64,${team[i].image}" class="img-fluid rounded-top w-100" alt="">
+                              <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://www.facebook.com/share/1MVSbtFPtx/?mibextid=wwXlfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href="https://wa.me/60136969570" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href="https://www.instagram.com/tasheer_edu?igsh=MWVmMzUwNHh6eml6aA=="target="_blank"><i class="fab fa-instagram"></i></a>
                                 </div>
-                            </div>
+                        </div>
+                        <div dir="rtl" class="team-title p-4">
+                            <h4 class="mb-0">${team[i].username}</h4>
+                            <p class="mb-0">${typeService}</p>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
             }
         } else {
             html += `
@@ -504,9 +498,52 @@ function displayTestimonials() {
     }
 }
 
+// document.getElementById("testimonial-form").addEventListener("submit", async function(event) {
+//     event.preventDefault(); 
+
+//     const username = event.target.elements[0].value;
+//     const comment = event.target.elements[1].value;
+//     const rating = event.target.elements.rating.value;
+
+//     const testimonialData = {
+//         username: username,
+//         comment: comment,
+//         rating: parseInt(rating)
+//     };
+
+
+//     try {
+//         const response = await fetch(`${url}/review/create`, {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(testimonialData),
+//         });
+
+//         // Check if the response is ok
+//         if (!response.ok) {
+//             const errorData = await response.json();
+//             throw new Error(`Error: ${errorData.message || 'Network response was not ok'}`);
+//         }
+
+//         const data = await response.json(); 
+
+//         const successAlert = document.getElementById("success-alert");
+        
+//         successAlert.classList.remove("d-none");
+        
+
+//         event.target.reset();
+//     } catch (error) {
+//         alert('شكرا لك , لقد تم ارسال تعليقك')
+//         successAlert.classList.remove("d-none");
+//     }
+// });
+
 document.getElementById("testimonial-form").addEventListener("submit", async function(event) {
     event.preventDefault(); 
-
+    
     const username = event.target.elements[0].value;
     const comment = event.target.elements[1].value;
     const rating = event.target.elements.rating.value;
@@ -517,7 +554,6 @@ document.getElementById("testimonial-form").addEventListener("submit", async fun
         rating: parseInt(rating)
     };
 
-
     try {
         const response = await fetch(`${url}/review/create`, {
             method: 'POST',
@@ -527,24 +563,23 @@ document.getElementById("testimonial-form").addEventListener("submit", async fun
             body: JSON.stringify(testimonialData),
         });
 
-        // Check if the response is ok
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error(`Error: ${errorData.message || 'Network response was not ok'}`);
         }
 
-        const data = await response.json(); 
-
-        const successAlert = document.getElementById("success-alert");
-        successAlert.classList.remove("d-none");
-        
-
+        // Success: Reset the form and reload the page
+        alert('شكرا لك، تم إرسال تعليقك بنجاح!');
         event.target.reset();
+        window.location.reload();
     } catch (error) {
-        alert('شكرا لك , لقد تم ارسال تعليقك')
-        successAlert.classList.remove("d-none");
+        // Error: Show an alert and reload the page
+        alert('حدث خطأ أثناء إرسال التعليق. حاول مرة أخرى.');
+        event.target.reset();
+        window.location.reload(); 
     }
 });
+
 
 
 document.getElementById("load-more").addEventListener("click", displayTestimonials);
